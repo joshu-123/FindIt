@@ -1,68 +1,52 @@
-/* style.css - Main design styles for FindIt@NSBM */
-
-/* --- NSBM Brand Colors --- */
 :root {
     --nsbm-green: #007A33;
     --deep-gray: #2C2C2C;
     --light-gray: #F4F4F4;
     --soft-orange: #FFA500;
-    --status-found: #007A33; /* Green */
-    --status-missing: #FFA500; /* Yellow/Orange */
-    --status-with-unit: #2C2C2C; /* Gray */
+    --status-found: #007A33;
+    --status-missing: #FFA500;
+    --status-with-unit: #2C2C2C;
 }
 
-/* --- Base Styles --- */
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', sans-serif; /* Using Inter for a modern look */
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--light-gray);
     color: var(--deep-gray);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures footer sticks to bottom */
-
-    /* --- Light Green Gradient Background with Low Opacity --- */
-    /*
-     * Using rgba() colors in the linear-gradient to control opacity directly.
-     * The last value in rgba (e.g., 0.2) controls the alpha (opacity).
-     * 0.0 is fully transparent, 1.0 is fully opaque.
-     * I've chosen two very light green shades with an opacity of 0.2.
-     * This will create a subtle green tint over the default light-gray background color.
-     */
-    background-image: linear-gradient(to bottom, rgba(144, 238, 144, 0.2), rgba(173, 216, 230, 0.2));
-    background-color: var(--light-gray); /* Fallback color if gradient somehow fails */
-    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    min-height: 100vh;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    width: 100%; /* Ensure container takes full width on smaller screens */
-    box-sizing: border-box; /* Include padding in element's total width and height */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* --- Header & Navigation Bar --- */
 header {
     background-color: var(--nsbm-green);
     color: white;
     padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: sticky; /* Makes header stick to the top */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures header stays on top of other content */
+    z-index: 1000;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    flex-wrap: wrap;
 }
 
 .navbar-brand {
@@ -76,22 +60,39 @@ header {
 }
 
 .navbar-brand img {
-    height: 50px; /* Adjusted height for NSBM logo - retained */
+    height: 100px;
     margin-right: 10px;
-    border-radius: 5px; /* Rounded corners for the logo */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nsbm-logo {
+    display: flex;
+    background: rgba(255, 255, 255, 0.8);
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+
 }
 
 .navbar-brand span {
-    white-space: nowrap; /* Prevent title from wrapping */
+    white-space: nowrap;
+    padding: 15px;
+    color: rgba(255, 255, 255);
 }
+
+.navbar-brand span:hover{
+    color:rgb(227, 255, 240)
+}
+
 
 .nav-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap; /* Allow nav links to wrap */
-    gap: 20px; /* Spacing between nav items */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .nav-links li a {
@@ -99,23 +100,21 @@ header {
     text-decoration: none;
     font-weight: 500;
     padding: 8px 15px;
-    border-radius: 8px; /* Rounded corners for nav links */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-links li a:hover,
 .nav-links li a.active {
     background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px);
 }
 
-/* --- Main Content Area & Section Styling --- */
 main {
-    flex: 1; /* Allows main content to expand and push footer down */
-    padding: 40px 0; /* Overall padding for the main content area */
+    flex: 1;
+    padding: 40px 0;
 }
 
-/* Keyframes for a simple fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -127,25 +126,23 @@ main {
     }
 }
 
-/* Base style for all major content sections */
+
 .content-section {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    margin-bottom: 30px; /* Space before the divider */
-    animation: fadeIn 0.8s ease-out forwards; /* Apply animation */
-    opacity: 0; /* Start invisible */
+    margin-bottom: 30px;
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
 }
 
-/* Hero Section (specific styling) */
 .hero {
     text-align: center;
-    padding: 60px 20px; /* Adjusted padding for hero */
-    /* Inherits background, border-radius, shadow, animation from .content-section */
-    margin-bottom: 30px; /* Space before the divider */
-    opacity: 1; /* Hero should be visible immediately */
-    animation: none; /* No fade-in for hero as it's the initial view */
+    padding: 60px 20px;
+    margin-bottom: 30px;
+    opacity: 1;
+    animation: none;
 }
 
 .hero h1 {
@@ -163,8 +160,8 @@ main {
 .button-group {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-    gap: 20px; /* Spacing between buttons */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .btn {
@@ -173,7 +170,7 @@ main {
     background-color: var(--nsbm-green);
     color: white;
     text-decoration: none;
-    border-radius: 10px; /* Rounded corners for buttons */
+    border-radius: 10px;
     font-weight: bold;
     font-size: 1.1em;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
@@ -181,8 +178,8 @@ main {
 }
 
 .btn:hover {
-    background-color: #005f2a; /* Darker green on hover */
-    transform: translateY(-3px); /* Lift effect */
+    background-color: #005f2a;
+    transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -191,14 +188,12 @@ main {
 }
 
 .btn.btn-orange:hover {
-    background-color: #cc8400; /* Darker orange on hover */
+    background-color: #cc8400;
 }
 
-/* --- Section Dividers with Texture --- */
 .section-divider {
-    height: 15px; /* Height of the divider */
-    background-color: var(--nsbm-green); /* Base green color */
-    /* Subtle diagonal stripe texture - retained */
+    height: 15px;
+    background-color: var(--nsbm-green);
     background-image: linear-gradient(45deg,
         rgba(255, 255, 255, 0.1) 25%,
         transparent 25%,
@@ -207,16 +202,14 @@ main {
         rgba(255, 255, 255, 0.1) 75%,
         transparent 75%,
         transparent);
-    background-size: 20px 20px; /* Size of the pattern */
-    margin: 50px auto; /* Space above and below the divider, center it */
-    width: 90%; /* Make it slightly narrower than the container */
-    max-width: 1100px; /* Max width to match container flow */
-    border-radius: 8px; /* Rounded corners for the divider */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    background-size: 20px 20px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-/* --- Section Titles --- */
 h2 {
     font-size: 2.2em;
     color: var(--nsbm-green);
@@ -238,19 +231,17 @@ h2::after {
     border-radius: 2px;
 }
 
-
-/* --- Cards (for How It Works, Item Board, etc.) --- */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
 
 .card {
-    background-color: var(--light-gray); /* Lighter background for cards within sections */
+    background-color: var(--light-gray);
     border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for cards */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -260,7 +251,7 @@ h2::after {
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -268,8 +259,8 @@ h2::after {
     width: 80px;
     height: 80px;
     margin-bottom: 15px;
-    border-radius: 10px; /* Rounded corners for icons */
-    object-fit: contain; /* Ensures the image fits within the bounds without cropping */
+    border-radius: 10px;
+    object-fit: contain;
 }
 
 .card h3 {
@@ -284,12 +275,10 @@ h2::after {
     margin-bottom: 20px;
 }
 
-/* --- Forms --- */
 .form-section {
-    /* Inherits .content-section styles for background, shadow, padding, margin, animation */
     max-width: 700px;
-    margin-left: auto; /* Center the form */
-    margin-right: auto; /* Center the form */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .form-group {
@@ -311,22 +300,22 @@ h2::after {
 .form-group input[type="file"],
 .form-group textarea,
 .form-group select {
-    width: calc(100% - 24px); /* Account for padding and border */
+    width: calc(100% - 24px);
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1em;
     color: var(--deep-gray);
-    background-color: #f9f9f9; /* Slightly off-white background for inputs */
+    background-color: #f9f9f9;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input[type="file"] {
-    padding: 8px; /* Slightly less padding for file input */
+    padding: 8px;
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical;
     min-height: 100px;
 }
 
@@ -334,7 +323,7 @@ h2::after {
 .form-group textarea:focus,
 .form-group select:focus {
     border-color: var(--nsbm-green);
-    box-shadow: 0 0 0 3px rgba(0, 122, 51, 0.2); /* Green glow on focus */
+    box-shadow: 0 0 0 3px rgba(0, 122, 51, 0.2);
     outline: none;
 }
 
@@ -348,7 +337,7 @@ h2::after {
     margin-right: 10px;
     width: 20px;
     height: 20px;
-    accent-color: var(--nsbm-green); /* Style checkbox with brand color */
+    accent-color: var(--nsbm-green);
 }
 
 .form-actions {
@@ -356,16 +345,15 @@ h2::after {
     margin-top: 30px;
 }
 
-/* --- Item Board Specific Styles --- */
 .item-card {
-    background-color: white; /* Item cards within the board section */
+    background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes footer to bottom if content is short */
+    justify-content: space-between;
 }
 
 .item-card:hover {
@@ -400,7 +388,7 @@ h2::after {
 .item-status-tag {
     display: inline-block;
     padding: 6px 12px;
-    border-radius: 20px; /* Pill shape */
+    border-radius: 20px;
     font-size: 0.8em;
     font-weight: bold;
     color: white;
@@ -450,18 +438,15 @@ h2::after {
     outline: none;
 }
 
-
-/* --- Footer --- */
 footer {
     background-color: var(--deep-gray);
     color: white;
     text-align: center;
     padding: 20px 0;
-    margin-top: 40px; /* Space above footer */
+    margin-top: 40px;
     font-size: 0.9em;
 }
 
-/* --- Responsive Design (Media Queries) --- */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -477,7 +462,7 @@ footer {
 
     .nav-links li a {
         display: block;
-        width: calc(100% - 30px); /* Adjust for padding */
+        width: calc(100% - 30px);
         text-align: center;
     }
 
@@ -495,8 +480,8 @@ footer {
     }
 
     .btn {
-        width: 80%; /* Make buttons wider on small screens */
-        margin: 0 auto; /* Center buttons */
+        width: 80%;
+        margin: 0 auto;
     }
 
     h2 {
@@ -504,7 +489,7 @@ footer {
     }
 
     .card-grid {
-        grid-template-columns: 1fr; /* Single column on small screens */
+        grid-template-columns: 1fr;
     }
 
     .content-section {
@@ -514,7 +499,7 @@ footer {
     .form-group input,
     .form-group textarea,
     .form-group select {
-        width: calc(100% - 24px); /* Adjust for padding and border */
+        width: calc(100% - 24px);
     }
 
     .filters {
@@ -523,7 +508,7 @@ footer {
     }
 
     .section-divider {
-        width: 95%; /* Adjust width for smaller screens */
+        width: 95%;
     }
 }
 
@@ -533,7 +518,7 @@ footer {
     }
 
     .navbar-brand img {
-        height: 40px; /* Adjust for smaller screens */
+        height: 40px;
     }
 
     .hero {

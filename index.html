@@ -5,23 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FindIt@NSBM - Lost it? Find it. Fast.</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts - Inter (for modern typography) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
-    <!-- Font Awesome for icons (still included for general use) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header Section: Contains the university logo, site title, and main navigation -->
     <header>
         <div class="container navbar">
-            <!-- Brand Logo and Title -->
             <a href="#home-section" class="navbar-brand">
-                <!-- NSBM Logo - Path: Assets/nsbm-logo.png -->
-                <img src="Assets/nsbm-logo.png.png" alt="NSBM Logo" onerror="this.onerror=null;this.src='https://placehold.co/50x50/007A33/FFFFFF?text=NSBM';">
+                <div class="nsbm-logo">
+                    <img src="Assets/nsbm-logo.png.png" alt="NSBM Logo" this.onerror=null;this.src='https://placehold.co/50x50/007A33/FFFFFF?text=NSBM';">
+                </div>
                 <span>FindIt@NSBM</span>
             </a>
             
-            <!-- Navigation Links -->
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home-section" class="active">Home</a></li>
@@ -35,10 +31,8 @@
         </div>
     </header>
 
-    <!-- Main Content Area -->
     <main>
         <div class="container">
-            <!-- Home Section: Main call to action and tagline -->
             <section id="home-section" class="hero content-section">
                 <h1>Lost it? Find it. Fast.</h1>
                 <p>Your go-to platform for reporting and recovering lost and found items at NSBM Green University.</p>
@@ -49,32 +43,24 @@
                 </div>
             </section>
 
-            <!-- Section Divider -->
             <div class="section-divider"></div>
 
-            <!-- How It Works Section: Explains the process with visual cards -->
             <section id="how-it-works-section" class="content-section">
                 <h2>How It Works</h2>
                 <div class="card-grid">
-                    <!-- Card 1: Report Item - Using icon from your screenshot -->
                     <div class="card">
-                        <!-- Path: Assets/icons/Browse Item Board (2).png -->
                         <img src="Assets/icons/Browse Item Board (2).png" alt="Report Item Icon" class="icon">
                         <h3>Report Your Item</h3>
                         <p>Quickly submit details about your lost or found item through our simple forms.</p>
                     </div>
                     
-                    <!-- Card 2: Browse Board - Using icon from your screenshot -->
                     <div class="card">
-                        <!-- Path: Assets/icons/Browse Item Board.png -->
                         <img src="Assets/icons/Browse Item Board.png" alt="Browse Board Icon" class="icon">
                         <h3>Browse Item Board</h3>
                         <p>Check the live item board to see if your item has been reported or to help others.</p>
                     </div>
 
-                    <!-- Card 3: Connect & Recover - Using icon from your screenshot -->
                     <div class="card">
-                        <!-- Path: Assets/icons/Connect_Recover.png -->
                         <img src="Assets/icons/Connect & Recover.png" alt="Connect & Recover Icon" class="icon">
                         <h3>Connect & Recover</h3>
                         <p>Get in touch with the finder or the official Lost & Found Unit to retrieve your item.</p>
@@ -82,15 +68,12 @@
                 </div>
             </section>
 
-            <!-- Section Divider -->
             <div class="section-divider"></div>
 
-            <!-- Report Lost Section -->
             <section id="report-lost-section" class="content-section form-section">
                 <h2>Report a Lost Item</h2>
                 <p style="text-align: center; margin-bottom: 30px; color: #555;">Please provide details about the item you've lost. This information will help others identify and return it.</p>
                 
-                <!-- Lost Item Report Form -->
                 <form action="#" method="post">
                     <div class="form-group">
                         <label for="lostItemName">Item Name</label>
@@ -146,15 +129,12 @@
                 </form>
             </section>
 
-            <!-- Section Divider -->
             <div class="section-divider"></div>
 
-            <!-- Report Found Section -->
             <section id="report-found-section" class="content-section form-section">
                 <h2>Report a Found Item</h2>
                 <p style="text-align: center; margin-bottom: 30px; color: #555;">Thank you for helping! Please provide details about the item you've found.</p>
                 
-                <!-- Found Item Report Form -->
                 <form action="#" method="post">
                     <div class="form-group">
                         <label for="foundItemName">Item Name</label>
@@ -216,15 +196,12 @@
                 </form>
             </section>
 
-            <!-- Section Divider -->
             <div class="section-divider"></div>
 
-            <!-- Item Board Section -->
             <section id="item-board-section" class="content-section">
                 <h2>Item Board</h2>
                 <p style="text-align: center; margin-bottom: 30px; color: #555;">Browse through recently reported lost and found items. Use the filters to narrow your search.</p>
 
-                <!-- Filters Section -->
                 <div class="filters">
                     <label for="filterCategory">Category:</label>
                     <select id="filterCategory">
@@ -260,9 +237,7 @@
                     <input type="date" id="filterDate">
                 </div>
 
-                <!-- Item Cards Grid -->
                 <div class="item-card-grid card-grid">
-                    <!-- Example Item Card 1 (Missing) -->
                     <div class="item-card">
                         <h3>Blue Notebook</h3>
                         <p>A4 size, dark blue cover, with 'Physics' written on it. Contains handwritten notes.</p>
@@ -274,7 +249,6 @@
                         <span class="item-status-tag status-missing">Still Missing</span>
                     </div>
 
-                    <!-- Example Item Card 2 (Found, With Unit) -->
                     <div class="item-card">
                         <h3>NSBM ID Card (John Doe)</h3>
                         <p>Student ID card belonging to John Doe (Reg No: NSBM/UG/XXXXX). Found near the main gate.</p>
@@ -286,7 +260,6 @@
                         <span class="item-status-tag status-with-unit">With Lost & Found Unit</span>
                     </div>
 
-                    <!-- Example Item Card 3 (Found) -->
                     <div class="item-card">
                         <h3>Black Umbrella</h3>
                         <p>Standard black umbrella, slightly worn handle. Found after a rainy day near the canteen.</p>
@@ -298,7 +271,6 @@
                         <span class="item-status-tag status-found">Found</span>
                     </div>
 
-                    <!-- Example Item Card 4 (Missing) -->
                     <div class="item-card">
                         <h3>USB Flash Drive</h3>
                         <p>Small silver USB drive, 32GB. Contains project files. Lost during a lecture.</p>
@@ -310,7 +282,6 @@
                         <span class="item-status-tag status-missing">Still Missing</span>
                     </div>
 
-                    <!-- Example Item Card 5 (Found, With Unit) -->
                     <div class="item-card">
                         <h3>Spectacles</h3>
                         <p>Pair of black-framed reading glasses. Found on a bench near the sports complex.</p>
@@ -322,7 +293,6 @@
                         <span class="item-status-tag status-with-unit">With Lost & Found Unit</span>
                     </div>
 
-                    <!-- Example Item Card 6 (Missing) -->
                     <div class="item-card">
                         <h3>Laptop Charger (Dell)</h3>
                         <p>Original Dell laptop charger, black, with velcro strap. Left behind in a study area.</p>
@@ -336,10 +306,8 @@
                 </div>
             </section>
 
-            <!-- Section Divider -->
             <div class="section-divider"></div>
 
-            <!-- About Us Section -->
             <section id="about-us-section" class="content-section">
                 <h2>About FindIt@NSBM</h2>
                 <p>
@@ -363,15 +331,12 @@
                 </p>
             </section>
 
-            <!-- Section Divider -->
             <div class="section-divider"></div>
 
-            <!-- Feedback Section -->
             <section id="feedback-section" class="content-section form-section">
                 <h2>Send Us Your Feedback</h2>
                 <p style="text-align: center; margin-bottom: 30px; color: #555;">We value your input! Please share your comments, suggestions, or any issues you've encountered.</p>
                 
-                <!-- Feedback Form -->
                 <form action="#" method="post">
                     <div class="form-group">
                         <label for="feedbackName">Your Name (Optional)</label>
@@ -393,7 +358,6 @@
         </div>
     </main>
 
-    <!-- Footer Section -->
     <footer>
         <div class="container">
             <p>&copy; 2025 FindIt@NSBM. All rights reserved. Designed for NSBM Green University.</p>
