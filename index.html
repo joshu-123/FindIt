@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindIt@NSBM - Lost it? Find it. Fast.</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts - Inter (for modern typography) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+    <!-- Font Awesome for icons (still included for general use) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section: Contains the university logo, site title, and main navigation -->
+    <header>
+        <div class="container navbar">
+            <!-- Brand Logo and Title -->
+            <a href="#home-section" class="navbar-brand">
+                <!-- NSBM Logo - Path: Assets/nsbm-logo.png -->
+                <img src="Assets/nsbm-logo.png.png" alt="NSBM Logo" onerror="this.onerror=null;this.src='https://placehold.co/50x50/007A33/FFFFFF?text=NSBM';">
+                <span>FindIt@NSBM</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home-section" class="active">Home</a></li>
+                    <li><a href="#report-lost-section">Report Lost</a></li>
+                    <li><a href="#report-found-section">Report Found</a></li>
+                    <li><a href="#item-board-section">Item Board</a></li>
+                    <li><a href="#about-us-section">About Us</a></li>
+                    <li><a href="#feedback-section">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <div class="container">
+            <!-- Home Section: Main call to action and tagline -->
+            <section id="home-section" class="hero content-section">
+                <h1>Lost it? Find it. Fast.</h1>
+                <p>Your go-to platform for reporting and recovering lost and found items at NSBM Green University.</p>
+                <div class="button-group">
+                    <a href="#report-lost-section" class="btn">I Lost Something</a>
+                    <a href="#report-found-section" class="btn btn-orange">I Found Something</a>
+                    <a href="#item-board-section" class="btn">View Item Board</a>
+                </div>
+            </section>
+
+            <!-- Section Divider -->
+            <div class="section-divider"></div>
+
+            <!-- How It Works Section: Explains the process with visual cards -->
+            <section id="how-it-works-section" class="content-section">
+                <h2>How It Works</h2>
+                <div class="card-grid">
+                    <!-- Card 1: Report Item - Using icon from your screenshot -->
+                    <div class="card">
+                        <!-- Path: Assets/icons/Browse Item Board (2).png -->
+                        <img src="Assets/icons/Browse Item Board (2).png" alt="Report Item Icon" class="icon">
+                        <h3>Report Your Item</h3>
+                        <p>Quickly submit details about your lost or found item through our simple forms.</p>
+                    </div>
+                    
+                    <!-- Card 2: Browse Board - Using icon from your screenshot -->
+                    <div class="card">
+                        <!-- Path: Assets/icons/Browse Item Board.png -->
+                        <img src="Assets/icons/Browse Item Board.png" alt="Browse Board Icon" class="icon">
+                        <h3>Browse Item Board</h3>
+                        <p>Check the live item board to see if your item has been reported or to help others.</p>
+                    </div>
+
+                    <!-- Card 3: Connect & Recover - Using icon from your screenshot -->
+                    <div class="card">
+                        <!-- Path: Assets/icons/Connect_Recover.png -->
+                        <img src="Assets/icons/Connect & Recover.png" alt="Connect & Recover Icon" class="icon">
+                        <h3>Connect & Recover</h3>
+                        <p>Get in touch with the finder or the official Lost & Found Unit to retrieve your item.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Divider -->
+            <div class="section-divider"></div>
+
+            <!-- Report Lost Section -->
+            <section id="report-lost-section" class="content-section form-section">
+                <h2>Report a Lost Item</h2>
+                <p style="text-align: center; margin-bottom: 30px; color: #555;">Please provide details about the item you've lost. This information will help others identify and return it.</p>
+                
+                <!-- Lost Item Report Form -->
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="lostItemName">Item Name</label>
+                        <input type="text" id="lostItemName" name="itemName" placeholder="e.g., Blue Notebook, Samsung Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lostCategory">Category</label>
+                        <select id="lostCategory" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="books">Books & Stationery</option>
+                            <option value="id-cards">ID Cards & Wallets</option>
+                            <option value="accessories">Bags & Accessories</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="lostDescription">Description</label>
+                        <textarea id="lostDescription" name="description" rows="5" placeholder="e.g., A4 size, with a 'Physics' label, minor scratches on the back..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="lostLocation">Where was it lost?</label>
+                        <input type="text" id="lostLocation" name="lostLocation" placeholder="e.g., Library 3rd Floor, Canteen, Block A Lecture Hall" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lostDate">Date Lost</label>
+                        <input type="date" id="lostDate" name="lostDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lostTime">Approx. Time Lost</label>
+                        <input type="time" id="lostTime" name="lostTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="lostItemImage">Upload Image (Optional)</label>
+                        <input type="file" id="lostItemImage" name="itemImage" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="lostContactName">Your Name</label>
+                        <input type="text" id="lostContactName" name="contactName" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lostContactEmail">Your NSBM Email</label>
+                        <input type="email" id="lostContactEmail" name="contactEmail" placeholder="your.email@nsbm.ac.lk" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lostContactPhone">Your Phone Number (Optional)</label>
+                        <input type="tel" id="lostContactPhone" name="contactPhone" placeholder="e.g., 07x-xxxxxxx">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Submit Lost Report</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Section Divider -->
+            <div class="section-divider"></div>
+
+            <!-- Report Found Section -->
+            <section id="report-found-section" class="content-section form-section">
+                <h2>Report a Found Item</h2>
+                <p style="text-align: center; margin-bottom: 30px; color: #555;">Thank you for helping! Please provide details about the item you've found.</p>
+                
+                <!-- Found Item Report Form -->
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="foundItemName">Item Name</label>
+                        <input type="text" id="foundItemName" name="itemName" placeholder="e.g., Black Umbrella, NSBM ID Card" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foundCategory">Category</label>
+                        <select id="foundCategory" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="books">Books & Stationery</option>
+                            <option value="id-cards">ID Cards & Wallets</option>
+                            <option value="accessories">Bags & Accessories</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="foundDescription">Description</labeL>
+                        <textarea id="foundDescription" name="description" rows="5" placeholder="e.g., A small, red wallet with a student ID inside, found near the cafeteria..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="foundLocation">Where was it found?</label>
+                        <input type="text" id="foundLocation" name="foundLocation" placeholder="e.g., Near the main gate, Lecture Hall B201, Sports Complex" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foundDate">Date Found</label>
+                        <input type="date" id="foundDate" name="foundDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foundTime">Approx. Time Found</label>
+                        <input type="time" id="foundTime" name="foundTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="foundItemImage">Upload Image (Optional)</label>
+                        <input type="file" id="foundItemImage" name="itemImage" accept="image/*">
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="handedOver" name="handedOver">
+                        <label for="handedOver">Was this item handed over to the NSBM Lost & Found Unit?</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foundContactName">Your Name</label>
+                        <input type="text" id="foundContactName" name="contactName" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foundContactEmail">Your NSBM Email</label>
+                        <input type="email" id="foundContactEmail" name="contactEmail" placeholder="your.email@nsbm.ac.lk" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foundContactPhone">Your Phone Number (Optional)</label>
+                        <input type="tel" id="foundContactPhone" name="contactPhone" placeholder="e.g., 07x-xxxxxxx">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-orange">Submit Found Report</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Section Divider -->
+            <div class="section-divider"></div>
+
+            <!-- Item Board Section -->
+            <section id="item-board-section" class="content-section">
+                <h2>Item Board</h2>
+                <p style="text-align: center; margin-bottom: 30px; color: #555;">Browse through recently reported lost and found items. Use the filters to narrow your search.</p>
+
+                <!-- Filters Section -->
+                <div class="filters">
+                    <label for="filterCategory">Category:</label>
+                    <select id="filterCategory">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="books">Books & Stationery</option>
+                        <option value="id-cards">ID Cards & Wallets</option>
+                        <option value="accessories">Bags & Accessories</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="filterStatus">Status:</label>
+                    <select id="filterStatus">
+                        <option value="all">All Statuses</option>
+                        <option value="missing">Missing</option>
+                        <option value="found">Found</option>
+                        <option value="with-unit">With Lost & Found Unit</option>
+                    </select>
+
+                    <label for="filterLocation">Location:</label>
+                    <select id="filterLocation">
+                        <option value="all">All Locations</option>
+                        <option value="library">Library</option>
+                        <option value="canteen">Canteen</option>
+                        <option value="block-a">Block A</option>
+                        <option value="block-b">Block B</option>
+                        <option value="sports">Sports Complex</option>
+                        <option value="other">Other Campus Area</option>
+                    </select>
+
+                    <label for="filterDate">Date:</label>
+                    <input type="date" id="filterDate">
+                </div>
+
+                <!-- Item Cards Grid -->
+                <div class="item-card-grid card-grid">
+                    <!-- Example Item Card 1 (Missing) -->
+                    <div class="item-card">
+                        <h3>Blue Notebook</h3>
+                        <p>A4 size, dark blue cover, with 'Physics' written on it. Contains handwritten notes.</p>
+                        <p class="item-meta">
+                            <strong>Lost On:</strong> 2025-06-28 <br>
+                            <strong>Location:</strong> Library, 3rd Floor <br>
+                            <strong>Contact:</strong> student.a@nsbm.ac.lk
+                        </p>
+                        <span class="item-status-tag status-missing">Still Missing</span>
+                    </div>
+
+                    <!-- Example Item Card 2 (Found, With Unit) -->
+                    <div class="item-card">
+                        <h3>NSBM ID Card (John Doe)</h3>
+                        <p>Student ID card belonging to John Doe (Reg No: NSBM/UG/XXXXX). Found near the main gate.</p>
+                        <p class="item-meta">
+                            <strong>Found On:</strong> 2025-06-29 <br>
+                            <strong>Location:</strong> Main Gate Area <br>
+                            <strong>Contact:</strong> Handed to L&F Unit
+                        </p>
+                        <span class="item-status-tag status-with-unit">With Lost & Found Unit</span>
+                    </div>
+
+                    <!-- Example Item Card 3 (Found) -->
+                    <div class="item-card">
+                        <h3>Black Umbrella</h3>
+                        <p>Standard black umbrella, slightly worn handle. Found after a rainy day near the canteen.</p>
+                        <p class="item-meta">
+                            <strong>Found On:</strong> 2025-06-30 <br>
+                            <strong>Location:</strong> Canteen <br>
+                            <strong>Contact:</strong> student.b@nsbm.ac.lk
+                        </p>
+                        <span class="item-status-tag status-found">Found</span>
+                    </div>
+
+                    <!-- Example Item Card 4 (Missing) -->
+                    <div class="item-card">
+                        <h3>USB Flash Drive</h3>
+                        <p>Small silver USB drive, 32GB. Contains project files. Lost during a lecture.</p>
+                        <p class="item-meta">
+                            <strong>Lost On:</strong> 2025-07-01 <br>
+                            <strong>Location:</strong> Block A, Lecture Hall A205 <br>
+                            <strong>Contact:</strong> student.c@nsbm.ac.lk
+                        </p>
+                        <span class="item-status-tag status-missing">Still Missing</span>
+                    </div>
+
+                    <!-- Example Item Card 5 (Found, With Unit) -->
+                    <div class="item-card">
+                        <h3>Spectacles</h3>
+                        <p>Pair of black-framed reading glasses. Found on a bench near the sports complex.</p>
+                        <p class="item-meta">
+                            <strong>Found On:</strong> 2025-07-02 <br>
+                            <strong>Location:</strong> Sports Complex <br>
+                            <strong>Contact:</strong> Handed to L&F Unit
+                        </p>
+                        <span class="item-status-tag status-with-unit">With Lost & Found Unit</span>
+                    </div>
+
+                    <!-- Example Item Card 6 (Missing) -->
+                    <div class="item-card">
+                        <h3>Laptop Charger (Dell)</h3>
+                        <p>Original Dell laptop charger, black, with velcro strap. Left behind in a study area.</p>
+                        <p class="item-meta">
+                            <strong>Lost On:</strong> 2025-07-02 <br>
+                            <strong>Location:</strong> Study Area, Block B <br>
+                            <strong>Contact:</strong> student.d@nsbm.ac.lk
+                        </p>
+                        <span class="item-status-tag status-missing">Still Missing</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Divider -->
+            <div class="section-divider"></div>
+
+            <!-- About Us Section -->
+            <section id="about-us-section" class="content-section">
+                <h2>About FindIt@NSBM</h2>
+                <p>
+                    FindIt@NSBM is a student-led initiative designed to bridge the gap between students who lose items and those who find them, complementing the existing official Lost & Found Unit at NSBM Green University.
+                </p>
+                <p>
+                    We understand how frustrating it can be to misplace valuable items like books, ID cards, or even laptops. While the university's Lost & Found Unit does an excellent job, there hasn't been a readily accessible digital platform for students to quickly track, report, or recover their belongings.
+                </p>
+                <h3>Our Purpose:</h3>
+                <ul>
+                    <li><strong>Instant Reporting:</strong> Provide a user-friendly web interface for students to report lost or found items instantly.</li>
+                    <li><strong>Community Board:</strong> Allow users to browse items reported by others, increasing the chances of a quick reunion.</li>
+                    <li><strong>Information Sharing:</strong> Share crucial information about items that have been submitted to the official NSBM Lost & Found Unit.</li>
+                    <li><strong>Awareness:</strong> Increase awareness about proper procedures for lost and found items and where to go for assistance within the university.</li>
+                </ul>
+                <p>
+                    This platform aims to make the lost and found process more transparent, interactive, and efficient for the entire NSBM community. It reflects NSBM's values of innovation, responsibility, and student empowerment, one found item at a time.
+                </p>
+                <p>
+                    If you have any questions or suggestions, please feel free to reach out via our <a href="#feedback-section" style="color: var(--nsbm-green); text-decoration: underline;">Feedback section</a>.
+                </p>
+            </section>
+
+            <!-- Section Divider -->
+            <div class="section-divider"></div>
+
+            <!-- Feedback Section -->
+            <section id="feedback-section" class="content-section form-section">
+                <h2>Send Us Your Feedback</h2>
+                <p style="text-align: center; margin-bottom: 30px; color: #555;">We value your input! Please share your comments, suggestions, or any issues you've encountered.</p>
+                
+                <!-- Feedback Form -->
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="feedbackName">Your Name (Optional)</label>
+                        <input type="text" id="feedbackName" name="feedbackName" placeholder="Your Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackEmail">Your Email (Optional)</label>
+                        <input type="email" id="feedbackEmail" name="feedbackEmail" placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackMessage">Your Message</label>
+                        <textarea id="feedbackMessage" name="feedbackMessage" rows="8" placeholder="Type your feedback here..." required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Submit Feedback</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FindIt@NSBM. All rights reserved. Designed for NSBM Green University.</p>
+        </div>
+    </footer>
+</body>
+</html>

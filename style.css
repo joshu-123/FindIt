@@ -1,0 +1,556 @@
+/* style.css - Main design styles for FindIt@NSBM */
+
+/* --- NSBM Brand Colors --- */
+:root {
+    --nsbm-green: #007A33;
+    --deep-gray: #2C2C2C;
+    --light-gray: #F4F4F4;
+    --soft-orange: #FFA500;
+    --status-found: #007A33; /* Green */
+    --status-missing: #FFA500; /* Yellow/Orange */
+    --status-with-unit: #2C2C2C; /* Gray */
+}
+
+/* --- Base Styles --- */
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter for a modern look */
+    margin: 0;
+    padding: 0;
+    color: var(--deep-gray);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer sticks to bottom */
+
+    /* --- Light Green Gradient Background with Low Opacity --- */
+    /*
+     * Using rgba() colors in the linear-gradient to control opacity directly.
+     * The last value in rgba (e.g., 0.2) controls the alpha (opacity).
+     * 0.0 is fully transparent, 1.0 is fully opaque.
+     * I've chosen two very light green shades with an opacity of 0.2.
+     * This will create a subtle green tint over the default light-gray background color.
+     */
+    background-image: linear-gradient(to bottom, rgba(144, 238, 144, 0.2), rgba(173, 216, 230, 0.2));
+    background-color: var(--light-gray); /* Fallback color if gradient somehow fails */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%; /* Ensure container takes full width on smaller screens */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* --- Header & Navigation Bar --- */
+header {
+    background-color: var(--nsbm-green);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Makes header stick to the top */
+    top: 0;
+    z-index: 1000; /* Ensures header stays on top of other content */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.navbar-brand img {
+    height: 50px; /* Adjusted height for NSBM logo - retained */
+    margin-right: 10px;
+    border-radius: 5px; /* Rounded corners for the logo */
+}
+
+.navbar-brand span {
+    white-space: nowrap; /* Prevent title from wrapping */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow nav links to wrap */
+    gap: 20px; /* Spacing between nav items */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 8px; /* Rounded corners for nav links */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* --- Main Content Area & Section Styling --- */
+main {
+    flex: 1; /* Allows main content to expand and push footer down */
+    padding: 40px 0; /* Overall padding for the main content area */
+}
+
+/* Keyframes for a simple fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Base style for all major content sections */
+.content-section {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-bottom: 30px; /* Space before the divider */
+    animation: fadeIn 0.8s ease-out forwards; /* Apply animation */
+    opacity: 0; /* Start invisible */
+}
+
+/* Hero Section (specific styling) */
+.hero {
+    text-align: center;
+    padding: 60px 20px; /* Adjusted padding for hero */
+    /* Inherits background, border-radius, shadow, animation from .content-section */
+    margin-bottom: 30px; /* Space before the divider */
+    opacity: 1; /* Hero should be visible immediately */
+    animation: none; /* No fade-in for hero as it's the initial view */
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: var(--nsbm-green);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: var(--deep-gray);
+    margin-bottom: 30px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 20px; /* Spacing between buttons */
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--nsbm-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px; /* Rounded corners for buttons */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #005f2a; /* Darker green on hover */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn.btn-orange {
+    background-color: var(--soft-orange);
+}
+
+.btn.btn-orange:hover {
+    background-color: #cc8400; /* Darker orange on hover */
+}
+
+/* --- Section Dividers with Texture --- */
+.section-divider {
+    height: 15px; /* Height of the divider */
+    background-color: var(--nsbm-green); /* Base green color */
+    /* Subtle diagonal stripe texture - retained */
+    background-image: linear-gradient(45deg,
+        rgba(255, 255, 255, 0.1) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.1) 75%,
+        transparent 75%,
+        transparent);
+    background-size: 20px 20px; /* Size of the pattern */
+    margin: 50px auto; /* Space above and below the divider, center it */
+    width: 90%; /* Make it slightly narrower than the container */
+    max-width: 1100px; /* Max width to match container flow */
+    border-radius: 8px; /* Rounded corners for the divider */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+
+/* --- Section Titles --- */
+h2 {
+    font-size: 2.2em;
+    color: var(--nsbm-green);
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--soft-orange);
+    border-radius: 2px;
+}
+
+
+/* --- Cards (for How It Works, Item Board, etc.) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: var(--light-gray); /* Lighter background for cards within sections */
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for cards */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card img.icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 10px; /* Rounded corners for icons */
+    object-fit: contain; /* Ensures the image fits within the bounds without cropping */
+}
+
+.card h3 {
+    font-size: 1.5em;
+    color: var(--deep-gray);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* --- Forms --- */
+.form-section {
+    /* Inherits .content-section styles for background, shadow, padding, margin, animation */
+    max-width: 700px;
+    margin-left: auto; /* Center the form */
+    margin-right: auto; /* Center the form */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--deep-gray);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="file"],
+.form-group textarea,
+.form-group select {
+    width: calc(100% - 24px); /* Account for padding and border */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--deep-gray);
+    background-color: #f9f9f9; /* Slightly off-white background for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="file"] {
+    padding: 8px; /* Slightly less padding for file input */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--nsbm-green);
+    box-shadow: 0 0 0 3px rgba(0, 122, 51, 0.2); /* Green glow on focus */
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--nsbm-green); /* Style checkbox with brand color */
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* --- Item Board Specific Styles --- */
+.item-card {
+    background-color: white; /* Item cards within the board section */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes footer to bottom if content is short */
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.item-card h3 {
+    color: var(--nsbm-green);
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+
+.item-card p {
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.item-card .item-meta {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.item-card .item-meta strong {
+    color: var(--deep-gray);
+}
+
+.item-status-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-found {
+    background-color: var(--status-found);
+}
+
+.status-missing {
+    background-color: var(--status-missing);
+}
+
+.status-with-unit {
+    background-color: var(--status-with-unit);
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters select,
+.filters input[type="date"] {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--deep-gray);
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.filters select:focus,
+.filters input[type="date"]:focus {
+    border-color: var(--nsbm-green);
+    outline: none;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--deep-gray);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px; /* Space above footer */
+    font-size: 0.9em;
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+        gap: 10px;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: calc(100% - 30px); /* Adjust for padding */
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 80%; /* Make buttons wider on small screens */
+        margin: 0 auto; /* Center buttons */
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: calc(100% - 24px); /* Adjust for padding and border */
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section-divider {
+        width: 95%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1.5em;
+    }
+
+    .navbar-brand img {
+        height: 40px; /* Adjust for smaller screens */
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card img.icon {
+        width: 60px;
+        height: 60px;
+    }
+}
